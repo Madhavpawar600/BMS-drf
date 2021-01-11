@@ -12,9 +12,9 @@ from .serializer import InventorySerializers,UserSerializers,OrderSerializer,Pro
 @api_view(['GET'])
 def apiOverview(request):
     api_urls={
-        'Login':'/login',
+        'Login':'/login/',
         'Logout':'/logout',
-        'Register':'/register',
+        'Register':'/register/',
         'Products':'/productlist',
         'order':'/order',
         'order history':'/order_history',
