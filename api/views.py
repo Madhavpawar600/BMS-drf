@@ -131,7 +131,7 @@ def orderItem(request):
                 ItemPrice[bakeryitem[i]]=str(price) + '*' + str(quantity[i]) + '='+' '+str((price * int(quantity[i])))
                 bitem=BakeryItems.objects.get(item=bakeryitem[i])
                 inventory=Inventory.objects.get(item=bitem)
-                inventory.quantity-=quantity[i]
+                inventory.quantity-=int(quantity[i])
                 inventory.save()
                 order=Order.objects.create(quantity=quantity[i],bakeryitem=bitem,customer=request.user)
                 order.save()
