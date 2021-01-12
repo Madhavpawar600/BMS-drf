@@ -128,7 +128,7 @@ def orderItem(request):
             for i in range(0,len(bakeryitem)):
                 price=BakeryItems.objects.get(item=bakeryitem[i]).sprice
                 total_price+=(price * int(quantity[i]))
-                ItemPrice[bakeryitem[i]]=str(price) + '*' + quantity[i] + '='+' '+str((price * int(quantity[i])))
+                ItemPrice[bakeryitem[i]]=str(price) + '*' + str(quantity[i]) + '='+' '+str((price * int(quantity[i])))
                 bitem=BakeryItems.objects.get(item=bakeryitem[i])
                 inventory=Inventory.objects.get(item=bitem)
                 inventory.quantity-=quantity[i]
